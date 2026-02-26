@@ -10,27 +10,30 @@ on:
 jobs:
   generate-pdf:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Install dependencies
-        run: |
-          npm install -g puppeteer
-          npm install -g chrome-launcher
+      - name: Install Puppeteer (local)
+        run: npm install puppeteer
 
-      - name: Generate PDF
+      - name: Generate PDF with Puppeteer
         run: |
           mkdir -p assets/docs
           node -e '
           const puppeteer = require("puppeteer");
           (async () => {
-            const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+            const browser = await puppeteer.launch({
+              headless: "new",
+              args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            });
             const page = await browser.newPage();
             const filePath = "file://" + process.cwd() + "/CV_Bruce_TUMPA_MADILA.html";
             await page.goto(filePath, { waitUntil: "networkidle0" });
@@ -43,6 +46,8 @@ jobs:
             await browser.close();
           })();
           '
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
 
       - name: Commit and Push PDF
         run: |
