@@ -1,0 +1,53 @@
+name: Generate PDF from CV
+
+on:
+  push:
+    paths:
+      - 'CV_Bruce_TUMPA_MADILA.html'
+      - '.github/workflows/generate_pdf.yml'
+  workflow_dispatch:
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install -g puppeteer
+          npm install -g chrome-launcher
+
+      - name: Generate PDF
+        run: |
+          mkdir -p assets/docs
+          node -e '
+          const puppeteer = require("puppeteer");
+          (async () => {
+            const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+            const page = await browser.newPage();
+            const filePath = "file://" + process.cwd() + "/CV_Bruce_TUMPA_MADILA.html";
+            await page.goto(filePath, { waitUntil: "networkidle0" });
+            await page.pdf({
+              path: "assets/docs/CV_Bruce_TUMPA_MADILA.pdf",
+              format: "A4",
+              printBackground: true,
+              margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" }
+            });
+            await browser.close();
+          })();
+          '
+
+      - name: Commit and Push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/docs/CV_Bruce_TUMPA_MADILA.pdf
+          git diff-index --quiet HEAD || git commit -m "Auto-generate PDF from CV"
+          git push

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruce TUMPA MADILA | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Bruce TM.</a>
+                <ul class="nav-links">
+                    <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Projets</a></li>
+                    <li><a href="#skills" data-i18n="nav_skills">Compétences</a></li>
+                    <li><a href="#education" data-i18n="nav_education">Formation</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li><a href="CV_Bruce_TUMPA_MADILA.html" target="_blank" class="cv-link" data-i18n="nav_cv">Mon CV</a></li>
+                    <li><a href="assets/docs/CV_Bruce_TUMPA_MADILA.pdf" download class="cv-link" data-i18n="cv_download_pdf">Télécharger PDF</a></li>
+                </ul>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <div class="nav-extra">
+                    <div class="language-switcher">
+                        <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+                        <span>|</span>
+                        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+                    </div>
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <div class="slider round">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero">
+            <div class="hero-content" data-aos="fade-right">
+                <h1 data-i18n="hero_title">Bruce TUMPA MADILA</h1>
+                <p data-i18n="hero_subtitle">Développeur Logiciel & Passionné de Réseaux Informatiques</p>
+                <p style="font-size: 1.1rem; max-width: 600px;" data-i18n="hero_desc">Étudiant en Licence 3 Informatique à l'Université de Strasbourg, avec un Master en Mathématiques-Réseaux.</p>
+                <div class="cta-buttons" style="display: flex; gap: 15px;">
+                    <a href="#projects" class="btn" data-i18n="hero_view_projects">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline" data-i18n="hero_contact_me">Me contacter</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="zoom-in">
+                <img src="assets/images/profil.JPG" alt="Bruce TUMPA MADILA">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="background: var(--white);">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2 data-i18n="about_title">Profil Professionnel</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                <p data-i18n="about_p1">Titulaire d'un Master en Mathématiques-Réseaux, je possède une solide base en développement logiciel (C, Python, Bash) et en administration réseaux (IPv4/IPv6, routage dynamique). Mon parcours reflète une forte capacité d'adaptation et un apprentissage continu.</p>
+                <p style="margin-top: 20px;" data-i18n="about_p2">Je travaille actuellement sur des projets en Kotlin et Flutter pour élargir mes compétences, ainsi que sur l'administration système et réseaux.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-i18n="projects_title">Projets Phare</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Jeu d'échecs -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-info">
+                        <h3 data-i18n="project_chess_title">Jeu d'échecs Multiplateforme</h3>
+                        <p data-i18n="project_chess_desc">Moteur de jeu full-stack avec temps réel via WebSockets et gestion de sessions avec Redis. <br><em>(En cours de construction, projet de groupe)</em></p>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin (KMP)</span>
+                            <span class="tag">Ktor</span>
+                            <span class="tag">Redis</span>
+                            <span class="tag">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Likelemba -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-info">
+                        <h3 data-i18n="project_likelemba_title">Likelemba</h3>
+                        <p data-i18n="project_likelemba_desc">Application mobile de gestion collaborative d'épargne (tontines) avec conception UI/UX moderne. <br><em>(En cours sur GitHub - Dépôt privé)</em></p>
+                        <div class="project-tags">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Partithéco -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-info">
+                        <h3 data-i18n="project_partitheco_title">Partithéco 2025</h3>
+                        <p data-i18n="project_partitheco_desc">Plateforme web de dépôt et consultation de partitions musicales réalisée en projet de L2.</p>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">HTML5/CSS</span>
+                        </div>
+                        <a href="https://github.com/epsi12-lab/Partitheco" target="_blank" class="project-link">Voir sur GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Ce Portfolio -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-info">
+                        <h3 data-i18n="project_portfolio_title">Mon Portfolio</h3>
+                        <p data-i18n="project_portfolio_desc">Ce site web moderne et responsive présentant mon parcours et mes réalisations.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/epsi12-lab/Portofolio" target="_blank" class="project-link">Voir sur GitHub <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- IPv6 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-info">
+                        <h3 data-i18n="project_ipv6_title">Architecture IPv6</h3>
+                        <p data-i18n="project_ipv6_desc">Déploiement d'une infrastructure réseau sécurisée via tunnel 6in4 (Mémoire de Master).</p>
+                        <div class="project-tags">
+                            <span class="tag">Cisco Packet Tracer</span>
+                            <span class="tag">IPv6</span>
+                            <span class="tag">Sécurité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-i18n="skills_title">Compétences Techniques</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category" data-aos="fade-right">
+                    <h3><i class="fas fa-code" style="color: var(--primary-color);"></i> Langages</h3>
+                    <div class="skill-list">
+                        <span class="tag">C / C++</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">PHP</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up">
+                    <h3><i class="fas fa-network-wired" style="color: var(--primary-color);"></i> Réseaux</h3>
+                    <div class="skill-list">
+                        <span class="tag">TCP/IP</span>
+                        <span class="tag">IPv4/IPv6</span>
+                        <span class="tag">VLAN</span>
+                        <span class="tag">Routage</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-left">
+                    <h3><i class="fas fa-tools" style="color: var(--primary-color);"></i> Outils & DevOps</h3>
+                    <div class="skill-list">
+                        <span class="tag">Git</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Wireshark</span>
+                        <span class="tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category" data-aos="fade-up">
+                    <h3><i class="fas fa-certificate" style="color: var(--primary-color);"></i> Certifications</h3>
+                    <div class="skill-list">
+                        <span class="tag">ANSSI SecNumacadémie</span>
+                        <span class="tag">Cisco Academy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-i18n="edu_title">Formation</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">2022 – Présent</div>
+                    <h3 data-i18n="edu_l3">Licence 3 Informatique</h3>
+                    <p>Université de Strasbourg, France</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-date">2015 – 2020</div>
+                    <h3 data-i18n="edu_m2">Master en Mathématiques-Réseaux</h3>
+                    <p>Université Pédagogique Nationale, R.D. Congo</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-date">2021 – 2022</div>
+                    <h3 data-i18n="edu_theo">Licence 1 Théologie Catholique</h3>
+                    <p>Université de Strasbourg, France</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-i18n="contact_title">Me Contacter</h2>
+            </div>
+            <div class="contact-container" style="max-width: 600px; margin: 0 auto;" data-aos="fade-up">
+                <form action="https://formspree.io/f/mqedngpb" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" data-i18n="contact_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="Votre email" data-i18n="contact_email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Objet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" data-i18n="contact_subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message..." data-i18n="contact_message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;"><span data-i18n="contact_send">Envoyer le message</span></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bruce TUMPA MADILA. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bruce-tumpa-madila-a4a184223" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/epsi12-lab" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:bruce.tumpa-madila@etu.unistra.fr"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p style="font-size: 0.8rem; opacity: 0.7;"><span data-i18n="footer_deploy">Déployé avec GitHub Pages</span></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/translations.js"></script>
+    <script>
+        // Initialisation des animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Gestion de la langue active au chargement
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('language') || 'fr';
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.innerText.toLowerCase() === savedLang);
+            });
+        });
+
+        // Menu Mobile
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('is-active');
+        });
+
+        // Dark Mode
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+</html>

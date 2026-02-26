@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Bruce TUMPA MADILA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color: #1a1a2e;
+    background: #f0f2f5;
+    line-height: 1.5;
+  }
+
+  .page {
+    max-width: 850px;
+    margin: 8px auto;
+    background: #fff;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+  }
+
+  /* HEADER – fond blanc, texte sombre */
+  .header {
+    background: #ffffff;
+    color: #1a1a2e;
+    padding: 20px 40px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    border-bottom: 2px solid #e4e8f0;
+  }
+
+  .header-text { flex: 1; }
+
+  .name {
+    font-size: 26pt;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+
+  .tagline {
+    font-size: 10.5pt;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+    font-size: 9pt;
+    color: #444;
+  }
+
+  .contact-item { display: flex; align-items: center; gap: 6px; }
+  .contact-item a { color: #003366; text-decoration: none; }
+  .contact-item a:hover { text-decoration: underline; }
+
+  /* PHOTO PLACEHOLDER */
+  .photo-box {
+    width: 90px;
+    height: 110px;
+    border: 1.5px dashed #bbb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    font-size: 7.5pt;
+    text-align: center;
+    flex-shrink: 0;
+    gap: 5px;
+  }
+
+  /* BODY LAYOUT */
+  .body {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: #f7f9fc;
+    padding: 18px 16px;
+    border-right: 1px solid #e4e8f0;
+  }
+
+  /* MAIN */
+  .main { padding: 18px 28px; }
+
+  /* SECTION */
+  .section { margin-bottom: 11px; }
+
+  .section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* PROFIL */
+  .profil-text {
+    font-size: 9.5pt;
+    color: #333;
+    line-height: 1.65;
+    text-align: justify;
+  }
+
+  /* ENTRÉES */
+  .entry { margin-bottom: 7px; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .entry-title {
+    font-weight: 700;
+    font-size: 9.5pt;
+    color: #1a1a2e;
+    flex: 1;
+  }
+
+  .entry-date {
+    font-size: 8pt;
+    color: #003366;
+    font-weight: 600;
+    white-space: nowrap;
+    background: #e8f0fb;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+
+  .entry-subtitle {
+    font-size: 8.5pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 3px;
+  }
+
+  .entry-bullets { list-style: none; margin-top: 3px; }
+
+  .entry-bullets li {
+    font-size: 8.5pt;
+    color: #444;
+    padding-left: 13px;
+    position: relative;
+    margin-bottom: 2px;
+  }
+
+  .entry-bullets li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #003366;
+    font-size: 7.5pt;
+  }
+
+  /* BADGE */
+  .project-badge {
+    display: inline-block;
+    font-size: 7pt;
+    background: #fff5e0;
+    color: #8a5000;
+    border: 1px solid #f0c060;
+    border-radius: 10px;
+    padding: 1px 6px;
+    margin-left: 5px;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+
+  /* SIDEBAR – compétences */
+  .skill-group { margin-bottom: 11px; }
+
+  .skill-label {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 4px;
+  }
+
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+  .tag {
+    font-size: 7.5pt;
+    background: #e8f0fb;
+    color: #003366;
+    border-radius: 10px;
+    padding: 2px 7px;
+    font-weight: 500;
+  }
+
+  /* LANGUES */
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .lang-name { font-size: 8.5pt; font-weight: 600; }
+
+  .lang-level {
+    font-size: 7.5pt;
+    background: #003366;
+    color: #fff;
+    border-radius: 10px;
+    padding: 2px 7px;
+  }
+
+  .lang-bar-bg {
+    width: 100%;
+    height: 4px;
+    background: #dde5f0;
+    border-radius: 3px;
+    margin-top: 3px;
+  }
+
+  .lang-bar {
+    height: 4px;
+    border-radius: 3px;
+    background: #003366;
+  }
+
+  /* CERTIF */
+  .certif-item {
+    font-size: 8pt;
+    color: #333;
+    margin-bottom: 6px;
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .certif-item::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0a7a3e;
+    font-weight: 700;
+  }
+
+  .certif-org { font-size: 7.5pt; color: #666; }
+
+  /* INTÉRÊTS */
+  .interest-item {
+    font-size: 8pt;
+    color: #444;
+    margin-bottom: 5px;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .interest-icon { font-size: 10pt; line-height: 1; }
+
+  @media print {
+    body { background: white; }
+    .page { margin: 0; box-shadow: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-text">
+      <div class="name">Bruce TUMPA MADILA</div>
+      <div class="tagline">Étudiant en Licence 3 Informatique</div>
+      <div class="contact-grid">
+        <div class="contact-item">📍 Strasbourg, France</div>
+        <div class="contact-item">📞 Disponible sur demande</div>
+        <div class="contact-item">📧 <a href="index.html#contact">Me contacter via le portfolio</a></div>
+        <div class="contact-item">🔗 <a href="https://www.linkedin.com/in/bruce-tumpa-madila-a4a184223" target="_blank">LinkedIn</a> &nbsp;|&nbsp; 💻 <a href="https://github.com/epsi12-lab" target="_blank">GitHub</a></div>
+      </div>
+    </div>
+
+    <!-- EMPLACEMENT PHOTO -->
+    <div class="photo-box" style="border: none;">
+      <img src="assets/images/profil.JPG" alt="Bruce TUMPA MADILA" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- COMPÉTENCES -->
+      <div class="section">
+        <div class="section-title">Compétences</div>
+
+        <div class="skill-group">
+          <div class="skill-label">Langages</div>
+          <div class="skill-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Bash</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Réseaux &amp; Protocoles</div>
+          <div class="skill-tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">IPv4/IPv6</span>
+            <span class="tag">VLAN</span>
+            <span class="tag">Routage statique &amp; dynamique</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Outils</div>
+          <div class="skill-tags">
+            <span class="tag">Git</span>
+            <span class="tag">Wireshark</span>
+            <span class="tag">Packet Tracer</span>
+            <span class="tag">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">En apprentissage</div>
+          <div class="skill-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">PHP</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">Virtualisation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="certif-item">
+          MOOC Cybersécurité<br>
+          <span class="certif-org">SecNumacadémie – ANSSI, 2025</span>
+        </div>
+        <div class="certif-item">
+          Notions de base sur les réseaux<br>
+          <span class="certif-org">Cisco Networking Academy, 2019</span>
+        </div>
+      </div>
+
+      <!-- LANGUES -->
+      <div class="section">
+        <div class="section-title">Langues</div>
+
+        <div class="lang-item">
+          <div style="flex:1; margin-right:8px;">
+            <div class="lang-name">Français</div>
+            <div class="lang-bar-bg"><div class="lang-bar" style="width:90%"></div></div>
+          </div>
+          <div class="lang-level">C1</div>
+        </div>
+
+        <div class="lang-item">
+          <div style="flex:1; margin-right:8px;">
+            <div class="lang-name">Anglais</div>
+            <div class="lang-bar-bg"><div class="lang-bar" style="width:55%"></div></div>
+          </div>
+          <div class="lang-level">B1</div>
+        </div>
+      </div>
+
+      <!-- INTÉRÊTS -->
+      <div class="section">
+        <div class="section-title">Centres d'intérêt</div>
+        <div class="interest-item"><span class="interest-icon">🔐</span><span>Cybersécurité</span></div>
+        <div class="interest-item"><span class="interest-icon">☁️</span><span>Cloud Computing</span></div>
+        <div class="interest-item"><span class="interest-icon">📡</span><span>Télécommunications</span></div>
+        <div class="interest-item"><span class="interest-icon">🎵</span><span>Musique classique (édition de partitions)</span></div>
+        <div class="interest-item"><span class="interest-icon">⚽</span><span>Football &amp; Mode</span></div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- PROFIL -->
+      <div class="section">
+        <div class="section-title">Profil</div>
+        <p class="profil-text">
+          Étudiant en Licence 3 d'Informatique à l'Université de Strasbourg, titulaire d'un <strong>Master en Mathématiques-Réseaux</strong> (UPN, RD Congo). Je possède une solide base en développement logiciel (C, Python, Bash) et en administration réseaux (IPv4/IPv6, routage dynamique). Mon parcours atypique reflète une forte capacité d'adaptation et un apprentissage continu. Je travaille actuellement sur des projets en Kotlin et Flutter pour élargir mes compétences, ainsi que sur l'administration système et réseaux. Je souhaite intégrer un Master pour approfondir mon expertise technique et contribuer à des projets d'ingénierie innovants.
+        </p>
+      </div>
+
+      <!-- PROJETS PHARE -->
+      <div class="section">
+        <div class="section-title">Projets phare</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              Jeu d'échecs Multiplateforme
+              <span class="project-badge">En cours</span>
+            </div>
+            <div class="entry-date">Projet intégrateur</div>
+          </div>
+          <div class="entry-subtitle">Kotlin Multiplatform (KMP) · Ktor · WebSockets · Redis · JWT</div>
+          <ul class="entry-bullets">
+            <li>Développement full-stack : moteur de jeu, API REST et client multiplateforme (KMP).</li>
+            <li>Temps réel via WebSockets ; gestion des sessions persistantes avec Redis.</li>
+            <li>Sécurisation des échanges par authentification JWT.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">
+              Likelemba – Gestion de tontines
+              <span class="project-badge">En cours</span>
+            </div>
+          </div>
+          <div class="entry-subtitle">Flutter · Dart · PostgreSQL</div>
+          <ul class="entry-bullets">
+            <li>Application mobile de gestion collaborative d'épargne (tontines).</li>
+            <li>Conception UI/UX et persistance des données avec PostgreSQL.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Partithéco 2025 – Plateforme de partitions</div>
+            <div class="entry-date">Projet L2</div>
+          </div>
+          <div class="entry-subtitle">HTML5 · CSS · PHP · SQLite</div>
+          <ul class="entry-bullets">
+            <li>Plateforme web de dépôt et consultation de partitions musicales.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Architecture IPv6 avec Tunnel 6in4</div>
+            <div class="entry-date">2020</div>
+          </div>
+          <div class="entry-subtitle">Cisco Packet Tracer · IPv6 · Sécurité réseau — Mémoire de Master</div>
+          <ul class="entry-bullets">
+            <li>Déploiement d'une infrastructure réseau sécurisée entre sites distants via tunnel 6in4.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FORMATIONS -->
+      <div class="section">
+        <div class="section-title">Formations</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Licence 3 Informatique</div>
+            <div class="entry-date">2022 – présent</div>
+          </div>
+          <div class="entry-subtitle">Université de Strasbourg, France</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Master – Mathématiques, option Réseaux Informatiques</div>
+            <div class="entry-date">2015 – 2020</div>
+          </div>
+          <div class="entry-subtitle">Université Pédagogique Nationale, R.D. Congo</div>
+          <ul class="entry-bullets">
+            <li>Mémoire : Architecture IPv6 avec Tunnel 6in4 sur Cisco Packet Tracer</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Licence 1 Théologie Catholique</div>
+            <div class="entry-date">2021 – 2022</div>
+          </div>
+          <div class="entry-subtitle">Université de Strasbourg, France</div>
+        </div>
+
+      </div><!-- /section formations -->
+    </div><!-- /main -->
+  </div><!-- /body layout -->
+</div><!-- /page -->
+</body>
+</html>
