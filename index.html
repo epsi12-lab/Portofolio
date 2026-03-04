@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bruce TUMPA MADILA | Portfolio</title>
+    <meta name="description" content="Portfolio de Bruce TUMPA MADILA, développeur logiciel et passionné de réseaux informatiques.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,25 +15,26 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">Bruce TM.</a>
-                <ul class="nav-links">
+                <ul class="nav-links" id="site-navigation">
                     <li><a href="#about" data-i18n="nav_about">À propos</a></li>
                     <li><a href="#projects" data-i18n="nav_projects">Projets</a></li>
+                    <li><a href="#internships" data-i18n="nav_internships">Stages</a></li>
                     <li><a href="#skills" data-i18n="nav_skills">Compétences</a></li>
                     <li><a href="#education" data-i18n="nav_education">Formation</a></li>
                     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-                    <li><a href="CV_Bruce_TUMPA_MADILA.html" target="_blank" class="cv-link" data-i18n="nav_cv">Mon CV</a></li>
+                    <li><a href="CV_Bruce_TUMPA_MADILA.html" target="_blank" rel="noopener noreferrer" class="cv-link" data-i18n="nav_cv">Mon CV</a></li>
                     <li><a href="assets/docs/CV_Bruce_TUMPA_MADILA.pdf" download class="cv-link" data-i18n="cv_download_pdf">Télécharger PDF</a></li>
                 </ul>
-                <div class="menu-toggle" id="mobile-menu">
+                <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-navigation">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
                 <div class="nav-extra">
                     <div class="language-switcher">
-                        <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+                        <button class="lang-btn active" type="button" onclick="changeLanguage('fr')">FR</button>
                         <span>|</span>
-                        <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+                        <button class="lang-btn" type="button" onclick="changeLanguage('en')">EN</button>
                     </div>
                     <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="checkbox">
@@ -116,6 +118,7 @@
                             <span class="tag">Dart</span>
                             <span class="tag">PostgreSQL</span>
                         </div>
+                        <a href="https://likelemba-7au3.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="project_live_demo">Voir la démo <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
 
@@ -129,7 +132,7 @@
                             <span class="tag">SQLite</span>
                             <span class="tag">HTML5/CSS</span>
                         </div>
-                        <a href="https://github.com/epsi12-lab/Partitheco" target="_blank" class="project-link">Voir sur GitHub <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://partitheco.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="project_live_demo">Voir la démo <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
 
@@ -143,7 +146,7 @@
                             <span class="tag">CSS3</span>
                             <span class="tag">JavaScript</span>
                         </div>
-                        <a href="https://github.com/epsi12-lab/Portofolio" target="_blank" class="project-link">Voir sur GitHub <i class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/epsi12-lab/Portofolio" target="_blank" rel="noopener noreferrer" class="project-link">Voir sur GitHub <i class="fas fa-external-link-alt"></i></a>
                     </div>
                 </div>
 
@@ -241,6 +244,34 @@
         </div>
     </section>
 
+    <section id="internships">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2 data-i18n="internships_title">Stages</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">Août 2018</div>
+                    <h3 data-i18n="internship_occ_title">Stage d'entreprise</h3>
+                    <p data-i18n="internship_occ_org">Office Congolais de Contrôle, Département des systèmes d'information</p>
+                    <p data-i18n="internship_occ_desc">Participation à la gestion de systèmes d'information avec WinDev.</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                    <div class="timeline-date">Fév. 2018 – Mars 2018</div>
+                    <h3 data-i18n="internship_school_2018_title">Stage d'enseignement</h3>
+                    <p data-i18n="internship_school_2018_org">Lycée de Kimwenza</p>
+                    <p data-i18n="internship_school_2018_desc">Enseignement des mathématiques (analyse, algèbre, statistique) au collège.</p>
+                </div>
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                    <div class="timeline-date">Janv. 2020 – Mars 2020</div>
+                    <h3 data-i18n="internship_school_2020_title">Stage d'enseignement</h3>
+                    <p data-i18n="internship_school_2020_org">Lycée de Kimwenza</p>
+                    <p data-i18n="internship_school_2020_desc">Enseignement des mathématiques (analyse, algèbre, statistique) au lycée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" style="background: var(--light-bg);">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -250,19 +281,19 @@
                 <form action="https://formspree.io/f/mqedngpb" method="POST" class="contact-form">
                     <input type="hidden" name="_next" value="merci.html">
                     <div class="form-group">
-                        <label for="name">Nom complet</label>
+                        <label for="name" data-i18n="contact_name">Nom complet</label>
                         <input type="text" id="name" name="name" placeholder="Votre nom" data-i18n="contact_name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email" data-i18n="contact_email">Email</label>
                         <input type="email" id="email" name="_replyto" placeholder="Votre email" data-i18n="contact_email" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject">Objet</label>
+                        <label for="subject" data-i18n="contact_subject">Objet</label>
                         <input type="text" id="subject" name="subject" placeholder="Sujet de votre message" data-i18n="contact_subject" required>
                     </div>
                     <div class="form-group">
-                        <label for="message">Message</label>
+                        <label for="message" data-i18n="contact_message">Message</label>
                         <textarea id="message" name="message" rows="5" placeholder="Votre message..." data-i18n="contact_message" required></textarea>
                     </div>
                     <button type="submit" class="btn" style="width: 100%;"><span data-i18n="contact_send">Envoyer le message</span></button>
@@ -275,9 +306,9 @@
         <div class="container">
             <p>&copy; 2026 Bruce TUMPA MADILA. <span data-i18n="footer_rights">Tous droits réservés.</span></p>
             <div class="social-links">
-                <a href="https://www.linkedin.com/in/bruce-tumpa-madila-a4a184223" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/epsi12-lab" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:bruce.tumpa-madila@etu.unistra.fr"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/bruce-tumpa-madila-a4a184223" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/epsi12-lab" target="_blank" rel="noopener noreferrer" aria-label="Profil GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:bruce.tumpa-madila@etu.unistra.fr" aria-label="Envoyer un email"><i class="fas fa-envelope"></i></a>
             </div>
             <p style="font-size: 0.8rem; opacity: 0.7;"><span data-i18n="footer_deploy">Déployé avec GitHub Pages</span></p>
         </div>
@@ -307,6 +338,7 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('is-active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active') ? 'true' : 'false');
         });
 
         // Dark Mode
@@ -331,6 +363,14 @@
         }
 
         toggleSwitch.addEventListener('change', switchTheme, false);
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('is-active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
     </script>
 </body>
 </html>
