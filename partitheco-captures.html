@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partitheco | Captures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-hero {
+            padding: 64px 0 28px;
+            background: linear-gradient(135deg, var(--white) 0%, #e8f0fb 100%);
+        }
+
+        .gallery-header {
+            max-width: 760px;
+        }
+
+        .gallery-header h1 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .gallery-header p {
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .gallery-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .gallery-actions .btn-outline {
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery-card {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery-card figcaption {
+            padding: 16px 18px 18px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                padding-top: 40px;
+            }
+
+            .gallery-header h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Partitheco 2025</h1>
+                <p>Captures de la plateforme web de depot et consultation de partitions pour garder la page d'accueil plus propre.</p>
+                <div class="gallery-actions">
+                    <a href="index.html#projects" class="btn btn-outline">Retour au portfolio</a>
+                    <a href="https://partitheco.onrender.com" target="_blank" rel="noopener noreferrer" class="btn">Voir la demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="gallery-grid">
+                <figure class="gallery-card">
+                    <img src="assets/images/partitheco_web1.png" alt="Capture Partitheco 1">
+                    <figcaption>Page d'accueil</figcaption>
+                </figure>
+                <figure class="gallery-card">
+                    <img src="assets/images/partitheco_web2.png" alt="Capture Partitheco 2">
+                    <figcaption>Interface web</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

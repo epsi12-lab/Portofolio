@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likelemba | Captures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gallery-hero {
+            padding: 64px 0 28px;
+            background: linear-gradient(135deg, var(--white) 0%, #e8f0fb 100%);
+        }
+
+        .gallery-header {
+            max-width: 760px;
+        }
+
+        .gallery-header h1 {
+            color: var(--primary-color);
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+
+        .gallery-header p {
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        .gallery-layout {
+            display: grid;
+            gap: 28px;
+        }
+
+        .gallery-card {
+            background: var(--white);
+            border-radius: 14px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .gallery-card figcaption {
+            padding: 16px 18px 18px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .gallery-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .gallery-actions .btn-outline {
+            background: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero {
+                padding-top: 40px;
+            }
+
+            .gallery-header h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="gallery-hero">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Likelemba</h1>
+                <p>Captures de l'application web et de l'application mobile pour presenter rapidement le projet sans charger la page principale.</p>
+                <div class="gallery-actions">
+                    <a href="index.html#projects" class="btn btn-outline">Retour au portfolio</a>
+                    <a href="https://likelemba-7au3.onrender.com" target="_blank" rel="noopener noreferrer" class="btn">Voir la demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="gallery-layout">
+                <figure class="gallery-card">
+                    <img src="assets/images/likelemba_web.png" alt="Capture de Likelemba version web">
+                    <figcaption>Likelemba Web</figcaption>
+                </figure>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app1.jpg" alt="Capture mobile Likelemba 1">
+                        <figcaption>Likelemba App 1</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app2.jpg" alt="Capture mobile Likelemba 2">
+                        <figcaption>Likelemba App 2</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app3.jpg" alt="Capture mobile Likelemba 3">
+                        <figcaption>Likelemba App 3</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app4.jpg" alt="Capture mobile Likelemba 4">
+                        <figcaption>Likelemba App 4</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app5.jpg" alt="Capture mobile Likelemba 5">
+                        <figcaption>Likelemba App 5</figcaption>
+                    </figure>
+                    <figure class="gallery-card">
+                        <img src="assets/images/likelemba_app6.jpg" alt="Capture mobile Likelemba 6">
+                        <figcaption>Likelemba App 6</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
