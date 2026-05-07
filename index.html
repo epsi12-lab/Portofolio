@@ -7,10 +7,16 @@
     <meta name="description" content="Portfolio de Bruce TUMPA MADILA, profil technique à l'intersection du développement logiciel, des systèmes, des réseaux et de la cybersécurité.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div class="scene" aria-hidden="true">
+        <div class="scene__blob scene__blob--1"></div>
+        <div class="scene__blob scene__blob--2"></div>
+        <div class="scene__blob scene__blob--3"></div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -52,10 +58,16 @@
     <section class="hero" id="home">
         <div class="container hero">
             <div class="hero-content" data-aos="fade-right">
+                <p class="hero-kicker" data-i18n="hero_kicker">Portfolio technique • Alternance Master 2026</p>
                 <h1 data-i18n="hero_title">Bruce TUMPA MADILA</h1>
                 <p data-i18n="hero_subtitle">Développement logiciel, systèmes, réseaux & cybersécurité</p>
-                <p style="font-size: 1.1rem; max-width: 600px;" data-i18n="hero_desc">Recherche une alternance Master 2026 pour mettre en pratique mes compétences techniques et continuer à apprendre dans un environnement professionnel exigeant.</p>
-                <div class="cta-buttons" style="display: flex; gap: 15px;">
+                <p class="hero-description" data-i18n="hero_desc">Recherche une alternance Master 2026 pour mettre en pratique mes compétences techniques et continuer à apprendre dans un environnement professionnel exigeant.</p>
+                <div class="hero-meta" aria-label="Repères rapides">
+                    <span class="hero-meta-item" data-i18n="hero_meta_masters">3 masters retenus</span>
+                    <span class="hero-meta-item" data-i18n="hero_meta_projects">5 projets présentés</span>
+                    <span class="hero-meta-item" data-i18n="hero_meta_axes">Logiciel • SI • Cyber</span>
+                </div>
+                <div class="cta-buttons">
                     <a href="#projects" class="btn" data-i18n="hero_view_projects">Voir mes projets</a>
                     <a href="#contact" class="btn btn-outline" data-i18n="hero_contact_me">Me contacter</a>
                 </div>
@@ -71,21 +83,21 @@
             <div class="section-title">
                 <h2 data-i18n="about_title">Profil Professionnel</h2>
             </div>
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+            <div class="about-copy">
                 <p data-i18n="about_p1">Titulaire d'un Master en Mathématiques-Réseaux et actuellement en Licence Informatique, je développe un profil à l'intersection du développement logiciel, des systèmes, des réseaux et de la cybersécurité. Mon parcours reflète une forte capacité d'adaptation, de structuration technique et d'apprentissage continu.</p>
-                <p style="margin-top: 20px;" data-i18n="about_p2">Mes projets me permettent de travailler sur des architectures client-serveur, la persistance des données, l'authentification, l'analyse de trafic et la fiabilité des applications, avec l'objectif de progresser dans des environnements techniques exigeants.</p>
+                <p class="about-copy-secondary" data-i18n="about_p2">Mes projets me permettent de travailler sur des architectures client-serveur, la persistance des données, l'authentification, l'analyse de trafic et la fiabilité des applications, avec l'objectif de progresser dans des environnements techniques exigeants.</p>
             </div>
-            <div class="soft-skills" style="margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
-                <h3 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;" data-i18n="soft_skills_title">Soft Skills</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-sync-alt"></i> <span data-i18n="soft_adaptability">Adaptabilité</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-book-reader"></i> <span data-i18n="soft_learning">Apprentissage continu</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-users"></i> <span data-i18n="soft_teamwork">Travail en équipe</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-lightbulb"></i> <span data-i18n="soft_curiosity">Curiosité technique</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-tasks"></i> <span data-i18n="soft_rigor">Rigueur</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-sitemap"></i> <span data-i18n="soft_structuring">Esprit de structuration</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-comments"></i> <span data-i18n="soft_communication">Communication</span></span>
-                    <span class="tag" style="padding: 8px 16px;"><i class="fas fa-search"></i> <span data-i18n="soft_analysis">Capacité d'analyse</span></span>
+            <div class="soft-skills editorial-panel" data-aos="fade-up">
+                <h3 class="editorial-subtitle" data-i18n="soft_skills_title">Soft Skills</h3>
+                <div class="soft-skills-list">
+                    <span class="tag soft-skill-tag"><i class="fas fa-sync-alt"></i> <span data-i18n="soft_adaptability">Adaptabilité</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-book-reader"></i> <span data-i18n="soft_learning">Apprentissage continu</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-users"></i> <span data-i18n="soft_teamwork">Travail en équipe</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-lightbulb"></i> <span data-i18n="soft_curiosity">Curiosité technique</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-tasks"></i> <span data-i18n="soft_rigor">Rigueur</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-sitemap"></i> <span data-i18n="soft_structuring">Esprit de structuration</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-comments"></i> <span data-i18n="soft_communication">Communication</span></span>
+                    <span class="tag soft-skill-tag"><i class="fas fa-search"></i> <span data-i18n="soft_analysis">Capacité d'analyse</span></span>
                 </div>
             </div>
             <div class="target-masters" data-aos="fade-up" data-aos-delay="100">
@@ -327,14 +339,14 @@
                             <p>Université de Strasbourg, France</p>
                         </div>
                         <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
-                            <div class="timeline-date">2015 – 2020</div>
-                            <h3 data-i18n="edu_m2">Master en Mathématiques-Réseaux</h3>
-                            <p>Université Pédagogique Nationale, R.D. Congo</p>
-                        </div>
-                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
                             <div class="timeline-date">2021 – 2022</div>
                             <h3 data-i18n="edu_theo">Licence 1 Théologie Catholique</h3>
                             <p>Université de Strasbourg, France</p>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                            <div class="timeline-date">2015 – 2020</div>
+                            <h3 data-i18n="edu_m2">Master en Mathématiques-Réseaux</h3>
+                            <p>Université Pédagogique Nationale, R.D. Congo</p>
                         </div>
                     </div>
                 </article>
@@ -344,6 +356,12 @@
                         <h2 data-i18n="internships_title">Stages</h2>
                     </div>
                     <div class="timeline split-timeline">
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-date">Janv. 2020 – Mars 2020</div>
+                            <h3 data-i18n="internship_school_2020_title">Stage d'enseignement</h3>
+                            <p data-i18n="internship_school_2020_org">Lycée de Kimwenza</p>
+                            <p data-i18n="internship_school_2020_desc">Enseignement des mathématiques (analyse, algèbre, statistique) au lycée.</p>
+                        </div>
                         <div class="timeline-item" data-aos="fade-left">
                             <div class="timeline-date">Août 2018</div>
                             <h3 data-i18n="internship_occ_title">Stage d'entreprise</h3>
@@ -355,12 +373,6 @@
                             <h3 data-i18n="internship_school_2018_title">Stage d'enseignement</h3>
                             <p data-i18n="internship_school_2018_org">Lycée de Kimwenza</p>
                             <p data-i18n="internship_school_2018_desc">Enseignement des mathématiques (analyse, algèbre, statistique) au collège.</p>
-                        </div>
-                        <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
-                            <div class="timeline-date">Janv. 2020 – Mars 2020</div>
-                            <h3 data-i18n="internship_school_2020_title">Stage d'enseignement</h3>
-                            <p data-i18n="internship_school_2020_org">Lycée de Kimwenza</p>
-                            <p data-i18n="internship_school_2020_desc">Enseignement des mathématiques (analyse, algèbre, statistique) au lycée.</p>
                         </div>
                     </div>
                 </article>
@@ -441,12 +453,9 @@
         const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
         const currentTheme = localStorage.getItem('theme');
 
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'dark') {
-                toggleSwitch.checked = true;
-            }
-        }
+        const initialTheme = currentTheme || 'dark';
+        document.documentElement.setAttribute('data-theme', initialTheme);
+        toggleSwitch.checked = initialTheme === 'dark';
 
         function switchTheme(e) {
             if (e.target.checked) {
