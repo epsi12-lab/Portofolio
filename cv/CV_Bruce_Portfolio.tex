@@ -1,0 +1,152 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage[top=1.0cm, bottom=1.0cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hyphenation{SecNumacadémie authentification PostgreSQL}
+\hypersetup{hidelinks}
+\pagestyle{empty}
+\setlength{\parskip}{2pt}
+\definecolor{accentcolor}{RGB}{30, 60, 120}
+\titleformat{\section}{\color{accentcolor}\normalfont\bfseries\normalsize}{}{0em}{}[\color{accentcolor}\titlerule]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=0pt, topsep=1pt, parsep=0pt}
+\newcommand{\cventry}[4]{%
+  \noindent\textbf{#1}\hfill\textit{\small #2}\\
+  \noindent\textit{\small #3}%
+  \ifx&#4&\else\\\noindent{\small #4}\fi
+  \vspace{2pt}
+}
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Bruce TUMPA MADILA}\\[3pt]
+  {\color{accentcolor}\normalsize
+   Cybersécurité \textbar{} Réseaux \textbar{} SI \textbar{}
+   Data \& IA \textbar{} Développement logiciel}\\[2pt]
+  \small Contrat d'apprentissage\quad|\quad
+         Disponible sept. 2026\quad|\quad
+         Île-de-France et France entière\\[2pt]
+  \small
+  Schiltigheim (67)\quad|\quad
+  07~49~19~98~94\quad|\quad
+  \href{mailto:bruce.madila@yahoo.fr}{bruce.madila@yahoo.fr}\\[1pt]
+  \href{https://linkedin.com/in/bruce-tumpa-madila-a4a184223}{LinkedIn}
+  \quad|\quad
+  \href{https://github.com/epsi12-lab}{GitHub}
+  \quad|\quad
+  \href{https://epsi12-lab.github.io/Portofolio}{Portfolio}
+\end{center}
+\vspace{2pt}
+
+\section{Profil}
+Je sécurise des infrastructures réseau, développe des applications distribuées
+et analyse des données pour contribuer à vos projets numériques.
+Je cherche une alternance en Master pour progresser dans un environnement
+exigeant et m'y investir pleinement.
+
+\section{Formation}
+\cventry{Licence Informatique}{2022~--~2026}{%
+Université de Strasbourg}{%
+Algorithmique, systèmes d'exploitation, réseaux, bases de données,
+développement logiciel.}
+
+\vspace{3pt}
+\cventry{Diplôme de niveau Bac+5~--~Mathématiques,
+option Réseaux Informatiques}{2015~--~2020}{%
+Université Pédagogique Nationale, Kinshasa (R.D.~Congo)}{%
+Mathématiques pures, modélisation, réseaux informatiques.}
+
+\section{Projets techniques}
+\cventry{Infrastructure réseau sécurisée~--~Lab GNS3}{2026}{%
+VyOS, pfSense, OSPF, VRRP, dnsmasq, Docker}{}
+\vspace{-4pt}
+\begin{itemize}
+  \item Déployé une architecture multi-sites : 4 VLAN, routage OSPF,
+    haute disponibilité VRRP et pfSense (refus explicite)~--~délai
+    de bascule diagnostiqué par analyse des caches ARP.
+\end{itemize}
+
+\cventry{Material Chess~--~Projet intégrateur L3}{2026}{%
+Kotlin, Ktor, WebSockets, JWT, PostgreSQL, Redis~--~\href{https://chess.ailurus.fr/}{Démo}}{}
+\vspace{-4pt}
+\begin{itemize}
+  \item Conçu en équipe une architecture microservices (REST API,
+    WebSockets, JWT) déployée publiquement~--~sessions sécurisées,
+    zéro perte de session constatée.
+\end{itemize}
+
+\cventry{Telco Churn Pipeline~--~Lab Data/IA}{2026}{%
+Python, Pandas, scikit-learn, matplotlib/seaborn~--~\href{https://github.com/epsi12-lab/telco-churn-pipeline}{GitHub}}{}
+\vspace{-4pt}
+\begin{itemize}
+  \item Pipeline ML de prédiction du churn télécom (IBM) : EDA, feature
+    engineering, modélisation supervisée et évaluation F1/ROC-AUC.
+\end{itemize}
+
+\cventry{Domaine Active Directory durci~--~Lab GNS3}{2026}{%
+Windows Server 2022, AD DS, GPO, ANSSI, PowerShell~--~\href{https://github.com/epsi12-lab/gns3-active-directory}{GitHub}}{}
+\vspace{-4pt}
+\begin{itemize}
+  \item Déployé un domaine AD DS (Win.~Server~2022) avec DNS intégré,
+    OU et groupes de sécurité~--~durci par 10 mesures ANSSI (GPO,
+    mots de passe, audit Event~4624/4625).
+\end{itemize}
+
+\cventry{Likelemba~--~Application mobile d'épargne
+collaborative}{En cours}{%
+Flutter, Dart, PostgreSQL}{}
+\vspace{-4pt}
+\begin{itemize}
+  \item Développé une application mobile multiplateforme
+    (Flutter/Dart) avec persistance PostgreSQL~--~UI fonctionnelle
+    Android et iOS depuis un seul codebase.
+\end{itemize}
+
+\section{Expérience professionnelle}
+\cventry{Opérateur logistique}{CDD\textbar{} 05/2022~--~12/2025}{%
+LIDL, direction régionale~--~Strasbourg}{%
+Application rigoureuse des procédures qualité~--~zéro incident signalé
+sur 3 ans d'activité ; délais maintenus en coordination avec l'équipe.}
+
+\cventry{Stage~--~Systèmes d'information}{Stage\textbar{} 08/2018}{%
+Office Congolais de Contrôle, département SI~--~Kinshasa}{}
+
+\section{Compétences techniques et comportementales}
+\begin{tabular}{@{}p{3.8cm}p{10.7cm}}
+\textbf{Cybersécurité}
+  & pfSense, JWT, \mbox{formation SecNumacadémie ANSSI}, triade CIA \\
+\textbf{Protocoles réseau}
+  & OSPF, EIGRP, VLAN, VRRP, TCP/IP, IPv4/IPv6, DHCP, DNS \\
+\textbf{Systèmes}
+  & Linux, VyOS, Cisco IOS, Windows Server 2022, AD/GPO \\
+\textbf{Développement \& APIs}
+  & Kotlin, Dart, Bash, REST API, WebSockets, Ktor, Flutter \\
+\textbf{Data \& IA}
+  & Python, Pandas, scikit-learn, matplotlib, ML supervisé \\
+\textbf{Outils \& logiciels}
+  & GNS3, Wireshark, Git/GitHub, Docker, Cisco Packet Tracer \\
+\textbf{Bases de données}
+  & PostgreSQL, Redis, SQLite, SQL \\
+\textbf{Soft skills}
+  & Rigueur \textperiodcentered{} Analyse et synthèse
+    \textperiodcentered{} Autonomie et initiative
+    \textperiodcentered{} Travail en équipe \\
+\end{tabular}
+
+\section{Certifications, formations et langues}
+\begin{tabular}{@{}p{3.8cm}p{10.7cm}}
+\textbf{Langues}
+  & Français C1 (courant)\quad Anglais B1 \\
+\textbf{Formations}
+  & \mbox{Formation SecNumacadémie}~--~ANSSI, 2026 ;
+    Réseaux~--~Cisco Networking Academy, 2019 \\
+\end{tabular}
+
+\end{document}

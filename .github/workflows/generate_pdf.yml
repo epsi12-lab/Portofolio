@@ -1,9 +1,9 @@
-name: Generate PDF from CV
+name: Generate CV PDF from LaTeX
 
 on:
   push:
     paths:
-      - 'CV_Bruce_TUMPA_MADILA.html'
+      - 'cv/CV_Bruce_Portfolio.tex'
       - '.github/workflows/generate_pdf.yml'
   workflow_dispatch:
 
@@ -16,43 +16,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
         with:
-          node-version: '20'
+          root_file: CV_Bruce_Portfolio.tex
+          working_directory: cv
+          latexmk_use_lualatex: false
+          args: -pdf -interaction=nonstopmode -halt-on-error
 
-      - name: Install Puppeteer (local)
-        run: npm install puppeteer
-
-      - name: Generate PDF with Puppeteer
+      - name: Move PDF into place
         run: |
           mkdir -p assets/docs
-          node -e '
-          const puppeteer = require("puppeteer");
-          (async () => {
-            const browser = await puppeteer.launch({
-              headless: "new",
-              args: ["--no-sandbox", "--disable-setuid-sandbox"]
-            });
-            const page = await browser.newPage();
-            const filePath = "file://" + process.cwd() + "/CV_Bruce_TUMPA_MADILA.html";
-            await page.goto(filePath, { waitUntil: "networkidle0" });
-            await page.pdf({
-              path: "assets/docs/CV_Bruce_TUMPA_MADILA.pdf",
-              format: "A4",
-              printBackground: true,
-              margin: { top: "0mm", right: "0mm", bottom: "0mm", left: "0mm" }
-            });
-            await browser.close();
-          })();
-          '
-        env:
-          PUPPETEER_SKIP_DOWNLOAD: 'true'
+          mv cv/CV_Bruce_Portfolio.pdf assets/docs/CV_Bruce_TUMPA_MADILA.pdf
 
       - name: Commit and Push PDF
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/docs/CV_Bruce_TUMPA_MADILA.pdf
-          git diff-index --quiet HEAD || git commit -m "Auto-generate PDF from CV"
+          git diff-index --quiet HEAD || git commit -m "Auto-generate PDF from CV LaTeX"
           git push
