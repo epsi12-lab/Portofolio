@@ -96,7 +96,7 @@ export const ui = {
     send: l('Envoyer le message', 'Send message'),
     sending: l('Envoi…', 'Sending…'),
     success: l('Merci ! Votre message a bien été envoyé, je vous réponds rapidement.', 'Thank you! Your message was sent, I’ll get back to you shortly.'),
-    error: l('L’envoi a échoué. Réessayez ou écrivez-moi directement par email.', 'Sending failed. Please try again or email me directly.'),
+    error: l('L’envoi a échoué. Réessayez, ou contactez-moi via LinkedIn.', 'Sending failed. Please try again, or reach me on LinkedIn.'),
     another: l('Envoyer un autre message', 'Send another message'),
     based: l('Schiltigheim (67) · Île-de-France · Mulhouse', 'Schiltigheim (France) · Île-de-France · Mulhouse'),
   },
