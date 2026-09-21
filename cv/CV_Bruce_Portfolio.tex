@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[french]{babel}
-\usepackage[top=1.0cm, bottom=1.0cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage[top=0.8cm, bottom=0.8cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{parskip}
@@ -12,27 +12,27 @@
 \hyphenation{SecNumacadémie authentification PostgreSQL}
 \hypersetup{hidelinks}
 \pagestyle{empty}
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{0.5pt}
 \definecolor{accentcolor}{RGB}{30, 60, 120}
 \titleformat{\section}{\color{accentcolor}\normalfont\bfseries\normalsize}{}{0em}{}[\color{accentcolor}\titlerule]
-\titlespacing{\section}{0pt}{4pt}{2pt}
+\titlespacing{\section}{0pt}{3pt}{1pt}
 \setlist[itemize]{leftmargin=1.2em, itemsep=0pt, topsep=1pt, parsep=0pt}
 \newcommand{\cventry}[4]{%
   \noindent\textbf{#1}\hfill\textit{\small #2}\\
   \noindent\textit{\small #3}%
   \ifx&#4&\else\\\noindent{\small #4}\fi
-  \vspace{2pt}
+  \vspace{1pt}
 }
 \begin{document}
 
 \begin{center}
   {\LARGE\bfseries Bruce TUMPA MADILA}\\[3pt]
   {\color{accentcolor}\normalsize
-   Cybersécurité \textbar{} Réseaux \textbar{} SI \textbar{}
-   Data \& IA \textbar{} Développement logiciel}\\[2pt]
-  \small Contrat d'apprentissage\quad|\quad
-         Disponible sept. 2026\quad|\quad
-         Île-de-France et France entière\\[2pt]
+   Systèmes d'Information \textbar{} Gestion de projet \textbar{}
+   Développement logiciel \textbar{} Cybersécurité \textbar{} Data \& IA}\\[2pt]
+  \small Alternant Master MIAGE, Université de Haute-Alsace\quad|\quad
+         CNP Assurances\quad|\quad
+         Depuis sept. 2026\\[2pt]
   \small
   Schiltigheim (67)\quad|\quad
   07~49~19~98~94\quad|\quad
@@ -46,12 +46,19 @@
 \vspace{2pt}
 
 \section{Profil}
-Je sécurise des infrastructures réseau, développe des applications distribuées
-et analyse des données pour contribuer à vos projets numériques.
-Je cherche une alternance en Master pour progresser dans un environnement
-exigeant et m'y investir pleinement.
+Alternant Master MIAGE au sein de CNP Assurances, je m'appuie sur une
+formation en informatique généraliste et en réseaux pour contribuer à
+l'évolution des systèmes d'information, tout en cultivant une pratique
+technique diversifiée : sécurisation d'infrastructures, développement
+d'applications distribuées et analyse de données.
 
 \section{Formation}
+\cventry{Master MIAGE en alternance}{Sept.~2026~--~2028}{%
+CNP Assurances, Garges-lès-Gonesse (95)~--~Université de Haute-Alsace (UHA),
+FST, Mulhouse (68)}{%
+Contrat d'apprentissage, 15~j. université / 15~j. entreprise.}
+
+\vspace{2pt}
 \cventry{Licence Informatique}{2022~--~2026}{%
 Université de Strasbourg}{%
 Algorithmique, systèmes d'exploitation, réseaux, bases de données,
@@ -110,23 +117,25 @@ Flutter, Dart, PostgreSQL}{}
 \end{itemize}
 
 \section{Expérience professionnelle}
-\cventry{Opérateur logistique}{CDD\textbar{} 05/2022~--~12/2025}{%
+\cventry{Opérateur logistique}{CDI\textbar{} 05/2022~--~08/2026}{%
 LIDL, direction régionale~--~Strasbourg}{%
 Application rigoureuse des procédures qualité~--~zéro incident signalé
-sur 3 ans d'activité ; délais maintenus en coordination avec l'équipe.}
+sur 4 ans d'activité ; délais maintenus en coordination avec l'équipe.}
 
 \cventry{Stage~--~Systèmes d'information}{Stage\textbar{} 08/2018}{%
 Office Congolais de Contrôle, département SI~--~Kinshasa}{}
 
 \section{Compétences techniques et comportementales}
 \begin{tabular}{@{}p{3.8cm}p{10.7cm}}
+\textbf{Gestion de projet}
+  & Trello, Gantt, Agilité (notions) \\
 \textbf{Cybersécurité}
   & pfSense, JWT, \mbox{formation SecNumacadémie ANSSI}, triade CIA \\
 \textbf{Protocoles réseau}
   & OSPF, EIGRP, VLAN, VRRP, TCP/IP, IPv4/IPv6, DHCP, DNS \\
 \textbf{Systèmes}
   & Linux, VyOS, Cisco IOS, Windows Server 2022, AD/GPO \\
-\textbf{Développement \& APIs}
+\textbf{Développement}
   & Kotlin, Dart, Bash, REST API, WebSockets, Ktor, Flutter \\
 \textbf{Data \& IA}
   & Python, Pandas, scikit-learn, matplotlib, ML supervisé \\

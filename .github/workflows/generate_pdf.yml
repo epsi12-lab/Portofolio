@@ -26,13 +26,13 @@ jobs:
 
       - name: Move PDF into place
         run: |
-          mkdir -p assets/docs
-          mv cv/CV_Bruce_Portfolio.pdf assets/docs/CV_Bruce_TUMPA_MADILA.pdf
+          mkdir -p public/docs
+          mv cv/CV_Bruce_Portfolio.pdf public/docs/CV_Bruce_TUMPA_MADILA.pdf
 
       - name: Commit and Push PDF
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/docs/CV_Bruce_TUMPA_MADILA.pdf
+          git add public/docs/CV_Bruce_TUMPA_MADILA.pdf
           git diff-index --quiet HEAD || git commit -m "Auto-generate PDF from CV LaTeX"
           git push

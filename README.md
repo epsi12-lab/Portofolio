@@ -1,56 +1,67 @@
 # Portfolio — Bruce TUMPA MADILA
 
-Portfolio personnel : réseaux, cybersécurité, développement logiciel, systèmes d'information et Data & IA.
+Portfolio personnel : systèmes d'information, gestion de projet, développement logiciel, cybersécurité, réseaux et Data & IA.
+Alternant en Master MIAGE (Université de Haute-Alsace) chez CNP Assurances.
 
 🔗 En ligne : https://epsi12-lab.github.io/Portofolio/
 
-## Fonctionnalités
+## Stack
 
-- Bilingue FR/EN via un système i18n léger (`js/translations.js`)
-- Thème clair/sombre
-- Responsive, animations au scroll (AOS)
-- SEO : meta Open Graph/Twitter Card, données structurées JSON-LD (`Person`), `sitemap.xml` et `robots.txt`
-- Aucune dépendance CDN externe : polices, icônes et librairies sont auto-hébergées (`assets/fonts/`, `assets/vendor/`)
-- CV compilé automatiquement depuis une source LaTeX (format ATS-friendly)
+- **React 19 + TypeScript**, bundlé avec **Vite**
+- **Prérendu statique** au build (SSR → HTML injecté dans `dist/index.html`) : le contenu est lisible sans JavaScript (SEO, aperçus de liens), puis React hydrate la page
+- **CSS moderne**, sans framework : OKLCH + `light-dark()`, animations pilotées par le scroll (`animation-timeline`), View Transitions (changement de thème), `<dialog>` natif, `@starting-style`, `color-mix()`
+- Bilingue FR/EN, thème clair/sombre (préférence système puis choix mémorisé), palette de commandes `Ctrl/⌘ + K`
+- Aucune ressource externe : polices (`@fontsource`), icônes (`lucide-react`) et images sont embarquées
+- Accessibilité : navigation clavier, `prefers-reduced-motion`, lien d'évitement, attributs ARIA sur la palette et la galerie
 
-## Structure du projet
+## Structure
 
 ```
-├── index.html                          # Page principale
-├── *-captures.html                     # Pages de captures dédiées par projet (Likelemba, Partithéco, GNS3 x2)
-├── merci.html                          # Page de confirmation du formulaire de contact
-├── css/style.css
-├── js/translations.js                  # Système i18n FR/EN
-├── assets/
-│   ├── images/                         # Photos, captures de projets
-│   ├── favicon/
-│   ├── fonts/                          # Manrope auto-hébergée
-│   ├── vendor/                         # Font Awesome + AOS auto-hébergés
-│   └── docs/                           # CV PDF généré
-├── cv/CV_Bruce_Portfolio.tex           # Source LaTeX du CV
-├── .github/workflows/generate_pdf.yml  # Compile le CV en PDF à chaque modification du .tex
-└── robots.txt / sitemap.xml
+├── index.html                 # Point d'entrée : balises SEO, JSON-LD, script anti-flash du thème
+├── src/
+│   ├── content/               # ★ Tout le contenu du site (FR + EN), séparé de l'interface
+│   │   ├── ui.ts              #   textes d'interface, hero, intros de sections
+│   │   ├── mission.ts         #   missions de l'alternance
+│   │   ├── projects.ts        #   projets et captures
+│   │   ├── skills.ts          #   compétences
+│   │   ├── timeline.ts        #   formation et expérience
+│   │   └── site.ts            #   liens, sections de navigation
+│   ├── components/            # Header, Hero, Alternance, Projects, Skills, Background, Contact…
+│   ├── styles/                # tokens.css (palette), base.css, components.css
+│   ├── i18n.tsx               # Contexte FR/EN (type L = { fr, en })
+│   ├── theme.ts               # Bascule de thème avec View Transition
+│   ├── App.tsx / main.tsx     # Application et hydratation
+│   └── entry-server.tsx       # Rendu serveur utilisé par le prérendu
+├── scripts/prerender.mjs      # Injecte le HTML rendu dans dist/index.html
+├── public/                    # Copié tel quel : images, favicons, CV PDF, robots.txt, sitemap.xml
+├── cv/CV_Bruce_Portfolio.tex  # Source LaTeX du CV
+└── .github/workflows/         # deploy.yml (build + Pages) et generate_pdf.yml (CV)
 ```
+
+## Modifier le contenu
+
+Tout se passe dans `src/content/` : chaque texte est un couple `l('français', 'english')`. Ajouter un projet = ajouter un objet dans `projects.ts` (les captures y sont déclarées aussi). Aucun composant à toucher.
 
 ## Développement local
 
-Site statique pur, aucune dépendance ni étape de build.
+Node.js ≥ 18 (Node 22 recommandé, c'est la version utilisée par la CI).
 
 ```bash
-python3 -m http.server 8080
+npm install
+npm run dev        # serveur de dev sur http://localhost:5173/Portofolio/
+npm run build      # typecheck + build + prérendu → dist/
+npm run preview    # sert dist/ sur http://localhost:4173/Portofolio/
 ```
-
-Puis ouvrir `http://localhost:8080`.
 
 ## CV (pipeline LaTeX → PDF)
 
-La source de vérité du CV est `cv/CV_Bruce_Portfolio.tex`. À chaque `git push` modifiant ce fichier, le workflow GitHub Actions `generate_pdf.yml` recompile le PDF via `latexmk` (image Docker `ghcr.io/xu-cheng/texlive-full`) et commit automatiquement le résultat dans `assets/docs/CV_Bruce_TUMPA_MADILA.pdf`, lié depuis le site ("Mon CV").
+La source de vérité du CV est `cv/CV_Bruce_Portfolio.tex`. À chaque push qui la modifie, le workflow `generate_pdf.yml` la compile avec `latexmk` (`xu-cheng/latex-action`) et commit le résultat dans `public/docs/CV_Bruce_TUMPA_MADILA.pdf`, lié depuis le site. Le site est ensuite redéployé automatiquement.
 
-Ne jamais éditer le PDF à la main — toujours passer par le `.tex`.
+Ne jamais éditer le PDF à la main : toujours passer par le `.tex`.
 
 ## Déploiement
 
-Hébergé via GitHub Pages depuis la branche `main` (pas de domaine personnalisé).
+GitHub Pages **via GitHub Actions** (`Settings → Pages → Build and deployment → Source : GitHub Actions`). Chaque push sur `main` lance `deploy.yml` : `npm ci`, `npm run build`, publication de `dist/`. L'URL est sous `/Portofolio/` (voir `base` dans `vite.config.ts`).
 
 ## Auteur
 
