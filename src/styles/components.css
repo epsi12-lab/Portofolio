@@ -554,6 +554,7 @@ dialog { color: var(--text); }
 dialog::backdrop { background: oklch(0.1 0.02 262 / 0.62); backdrop-filter: blur(6px); }
 
 dialog.gallery,
+dialog.detail,
 dialog.palette {
   padding: 0;
   border: 1px solid var(--border-strong);
@@ -564,9 +565,11 @@ dialog.palette {
   transition: opacity 0.25s, transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), overlay 0.25s allow-discrete, display 0.25s allow-discrete;
 }
 dialog.gallery[open],
+dialog.detail[open],
 dialog.palette[open] { opacity: 1; transform: none; }
 @starting-style {
   dialog.gallery[open],
+  dialog.detail[open],
   dialog.palette[open] { opacity: 0; transform: translateY(14px) scale(0.98); }
 }
 dialog::backdrop { transition: opacity 0.25s, overlay 0.25s allow-discrete, display 0.25s allow-discrete; }
@@ -617,6 +620,57 @@ dialog::backdrop { transition: opacity 0.25s, overlay 0.25s allow-discrete, disp
 @media (max-width: 560px) {
   .gallery-stage { padding-inline: 0.75rem; }
   .gallery-nav { top: auto; bottom: 0.4rem; translate: none; }
+}
+
+/* Panneau « En savoir plus » (dialog natif) */
+.detail { width: min(640px, 94vw); max-height: 88svh; margin: auto; border-radius: 26px; overflow: hidden; }
+.detail-body { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; max-height: 88svh; }
+.detail-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.4rem 1.1rem 1rem 1.6rem; border-bottom: 1px solid var(--border); }
+.detail-cat { color: var(--accent); font: 600 0.72rem/1 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.detail-head h3 { margin-top: 0.4rem; font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.detail-scroll { overflow-y: auto; padding: 1.4rem 1.6rem; scrollbar-width: thin; }
+.detail-section + .detail-section { margin-top: 1.3rem; }
+.detail-section h4 { margin-bottom: 0.4rem; color: var(--text-3); font: 600 0.72rem/1 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.detail-section p { color: var(--text-2); font-size: 0.97rem; line-height: 1.6; }
+.detail-points { display: grid; gap: 0.6rem; margin-top: 1.3rem; }
+.detail-points li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--text-2);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+.detail-points li::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.detail-scroll .outcome { margin-top: 1.3rem; }
+.detail-note { margin-top: 1.1rem; color: var(--text-3); font-size: 0.88rem; font-style: italic; }
+.detail-gallery-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.detail-gallery-trigger:hover { border-color: var(--accent); background: var(--surface-sunken); }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; padding: 1.1rem 1.6rem; border-top: 1px solid var(--border); }
+@media (max-width: 560px) {
+  .detail-head { padding: 1.1rem 0.9rem 0.9rem 1.1rem; }
+  .detail-scroll { padding: 1.1rem; }
+  .detail-actions { padding: 1rem 1.1rem; }
 }
 
 /* ==========================================================================

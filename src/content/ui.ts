@@ -67,6 +67,10 @@ export const ui = {
     prev: l('Précédente', 'Previous'),
     next: l('Suivante', 'Next'),
     of: l('sur', 'of'),
+    more: l('En savoir plus', 'More details'),
+    context: l('Contexte', 'Context'),
+    approach: l('Approche', 'Approach'),
+    seeCaptures: l('Voir les captures', 'View screenshots'),
   },
 
   skills: {
