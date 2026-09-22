@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { ArrowUpRight, Images, Target } from 'lucide-react'
+import { ArrowUpRight, Images, Info, Target } from 'lucide-react'
 import { useI18n } from '../i18n'
 import { categoryLabels, projects, type Project, type ProjectCategory } from '../content/projects'
 import { ui } from '../content/ui'
 import { SectionHead } from './SectionHead'
 import { ProjectGallery } from './ProjectGallery'
+import { ProjectDetail } from './ProjectDetail'
 import { GithubIcon } from './Icons'
 
 type Filter = 'all' | ProjectCategory
@@ -15,10 +16,15 @@ export function Projects() {
   const p = ui.projects
   const [filter, setFilter] = useState<Filter>('all')
   const [openId, setOpenId] = useState<string | null>(null)
+  const [detailId, setDetailId] = useState<string | null>(null)
 
   const shown = projects.filter((x) => filter === 'all' || x.category === filter)
   const count = (f: Filter) => (f === 'all' ? projects.length : projects.filter((x) => x.category === f).length)
   const opened = projects.find((x) => x.id === openId) ?? null
+  const detailed = projects.find((x) => x.id === detailId) ?? null
+
+  /** Ouvre la galerie plein écran depuis le panneau de détail, en fermant ce dernier. */
+  const openGalleryFrom = (id: string) => { setDetailId(null); setOpenId(id) }
 
   return (
     <section id="projets" className="section" aria-labelledby="projets-title">
@@ -39,18 +45,19 @@ export function Projects() {
         <ul className="project-grid">
           {shown.map((project) => (
             <li key={project.id} className="project-item">
-              <ProjectCard project={project} onOpenGallery={() => setOpenId(project.id)} />
+              <ProjectCard project={project} onOpenGallery={() => setOpenId(project.id)} onOpenDetail={() => setDetailId(project.id)} />
             </li>
           ))}
         </ul>
       </div>
 
+      <ProjectDetail project={detailed} onClose={() => setDetailId(null)} onOpenGallery={openGalleryFrom} />
       <ProjectGallery project={opened} onClose={() => setOpenId(null)} />
     </section>
   )
 }
 
-function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGallery: () => void }) {
+function ProjectCard({ project, onOpenGallery, onOpenDetail }: { project: Project; onOpenGallery: () => void; onOpenDetail: () => void }) {
   const { t } = useI18n()
   const p = ui.projects
 
@@ -59,7 +66,7 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
       <div className="project-meta">
         <span className="project-cat">{t(categoryLabels[project.category])}</span>
         {project.period && <span className="project-period">{project.period}</span>}
-        {project.inProgress && <span className="badge">{t(p.inProgress)}</span>}
+        {project.inProgress && <span className="badge">{project.status ? t(project.status) : t(p.inProgress)}</span>}
       </div>
 
       <h3>{t(project.title)}</h3>
@@ -87,7 +94,11 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
             <GithubIcon /> {t(p.code)}
           </a>
         )}
-        {project.gallery && (
+        {project.detail ? (
+          <button type="button" className="link-action" onClick={onOpenDetail} aria-haspopup="dialog">
+            <Info size={16} aria-hidden="true" /> {t(p.more)}
+          </button>
+        ) : project.gallery && (
           <button type="button" className="link-action" onClick={onOpenGallery} aria-haspopup="dialog">
             <Images size={16} aria-hidden="true" /> {t(p.captures)}
             <span className="filter-count">{project.gallery.length}</span>

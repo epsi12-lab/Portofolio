@@ -10,7 +10,7 @@ export const ui = {
   paletteOpen: l('Recherche rapide', 'Quick search'),
 
   hero: {
-    status: l('Alternant Master MIAGE · CNP Assurances', 'Work-study Master’s student (MIAGE) · CNP Assurances'),
+    status: l('Alternant MOA (Maîtrise d’ouvrage) · CNP Assurances', 'Work-study Business Analyst (MOA) · CNP Assurances'),
     lead: l(
       'Je fais le lien entre les besoins métier et les systèmes d’information, avec une base technique en réseaux, cybersécurité, développement et data.',
       'I bridge business needs and information systems, backed by a technical foundation in networks, cybersecurity, software development and data.',
@@ -38,6 +38,15 @@ export const ui = {
       'Site personnel : les projets et propos présentés n’engagent pas CNP Assurances.',
       'Personal site: the projects and views presented do not represent CNP Assurances.',
     ),
+    rhythm: {
+      label: l('Rythme d’alternance', 'Work-study rhythm'),
+      aria: l(
+        'Alternance de 15 jours en entreprise et 15 jours à l’université, répétée tout au long du contrat.',
+        'Alternating 15 days at the company and 15 days at university, repeated throughout the contract.',
+      ),
+      company: l('CNP Assurances · 15 jours', 'CNP Assurances · 15 days'),
+      school: l('Université de Haute-Alsace · 15 jours', 'Université de Haute-Alsace · 15 days'),
+    },
   },
 
   projects: {
@@ -58,6 +67,10 @@ export const ui = {
     prev: l('Précédente', 'Previous'),
     next: l('Suivante', 'Next'),
     of: l('sur', 'of'),
+    more: l('En savoir plus', 'More details'),
+    context: l('Contexte', 'Context'),
+    approach: l('Approche', 'Approach'),
+    seeCaptures: l('Voir les captures', 'View screenshots'),
   },
 
   skills: {
@@ -98,7 +111,7 @@ export const ui = {
     success: l('Merci ! Votre message a bien été envoyé, je vous réponds rapidement.', 'Thank you! Your message was sent, I’ll get back to you shortly.'),
     error: l('L’envoi a échoué. Réessayez, ou contactez-moi via LinkedIn.', 'Sending failed. Please try again, or reach me on LinkedIn.'),
     another: l('Envoyer un autre message', 'Send another message'),
-    based: l('Schiltigheim (67) · Île-de-France · Mulhouse', 'Schiltigheim (France) · Île-de-France · Mulhouse'),
+    based: l('Garges-lès-Gonesse (95) · Mulhouse (68)', 'Garges-lès-Gonesse (France) · Mulhouse (France)'),
   },
 
   footer: {
