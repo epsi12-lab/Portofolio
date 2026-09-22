@@ -10,7 +10,7 @@ export const ui = {
   paletteOpen: l('Recherche rapide', 'Quick search'),
 
   hero: {
-    status: l('Alternant Master MIAGE · CNP Assurances', 'Work-study Master’s student (MIAGE) · CNP Assurances'),
+    status: l('Alternant MOA (Maîtrise d’ouvrage) · CNP Assurances', 'Work-study Business Analyst (MOA) · CNP Assurances'),
     lead: l(
       'Je fais le lien entre les besoins métier et les systèmes d’information, avec une base technique en réseaux, cybersécurité, développement et data.',
       'I bridge business needs and information systems, backed by a technical foundation in networks, cybersecurity, software development and data.',
@@ -98,7 +98,7 @@ export const ui = {
     success: l('Merci ! Votre message a bien été envoyé, je vous réponds rapidement.', 'Thank you! Your message was sent, I’ll get back to you shortly.'),
     error: l('L’envoi a échoué. Réessayez, ou contactez-moi via LinkedIn.', 'Sending failed. Please try again, or reach me on LinkedIn.'),
     another: l('Envoyer un autre message', 'Send another message'),
-    based: l('Schiltigheim (67) · Île-de-France · Mulhouse', 'Schiltigheim (France) · Île-de-France · Mulhouse'),
+    based: l('Garges-lès-Gonesse (95) · Mulhouse (68)', 'Garges-lès-Gonesse (France) · Mulhouse (France)'),
   },
 
   footer: {
