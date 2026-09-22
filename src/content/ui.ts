@@ -38,6 +38,15 @@ export const ui = {
       'Site personnel : les projets et propos présentés n’engagent pas CNP Assurances.',
       'Personal site: the projects and views presented do not represent CNP Assurances.',
     ),
+    rhythm: {
+      label: l('Rythme d’alternance', 'Work-study rhythm'),
+      aria: l(
+        'Alternance de 15 jours en entreprise et 15 jours à l’université, répétée tout au long du contrat.',
+        'Alternating 15 days at the company and 15 days at university, repeated throughout the contract.',
+      ),
+      company: l('CNP Assurances · 15 jours', 'CNP Assurances · 15 days'),
+      school: l('Université de Haute-Alsace · 15 jours', 'Université de Haute-Alsace · 15 days'),
+    },
   },
 
   projects: {

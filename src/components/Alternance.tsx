@@ -3,6 +3,7 @@ import { useI18n } from '../i18n'
 import { missions, type MissionIcon } from '../content/mission'
 import { ui } from '../content/ui'
 import { SectionHead } from './SectionHead'
+import { RhythmDiagram } from './RhythmDiagram'
 
 const icons: Record<MissionIcon, LucideIcon> = {
   needs: Lightbulb,
@@ -28,6 +29,8 @@ export function Alternance() {
           <li className="chip chip--accent"><Route size={14} aria-hidden="true" />{t(a.role)}</li>
           <li className="chip"><MapPin size={14} aria-hidden="true" />Garges-lès-Gonesse (95)</li>
         </ul>
+
+        <RhythmDiagram />
 
         <ol className="mission-grid">
           {missions.map((m, i) => {
