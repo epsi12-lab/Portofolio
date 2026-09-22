@@ -59,7 +59,7 @@ function ProjectCard({ project, onOpenGallery }: { project: Project; onOpenGalle
       <div className="project-meta">
         <span className="project-cat">{t(categoryLabels[project.category])}</span>
         {project.period && <span className="project-period">{project.period}</span>}
-        {project.inProgress && <span className="badge">{t(p.inProgress)}</span>}
+        {project.inProgress && <span className="badge">{project.status ? t(project.status) : t(p.inProgress)}</span>}
       </div>
 
       <h3>{t(project.title)}</h3>

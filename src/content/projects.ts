@@ -23,6 +23,8 @@ export type Project = {
   code?: string
   privateRepo?: boolean
   inProgress?: boolean
+  /** Texte du badge quand inProgress est vrai (sinon le texte générique "En cours"). */
+  status?: L
   gallery?: Shot[]
 }
 
@@ -124,7 +126,8 @@ export const projects: Project[] = [
       'Web platform to upload and browse sheet music: data modelling, persistence and content management.',
     ),
     tags: ['PHP', 'SQLite', 'HTML5', 'CSS'],
-    live: 'https://partitheco.onrender.com',
+    inProgress: true,
+    status: l('Refonte en cours', 'Redesign in progress'),
     gallery: [
       shot('images/partitheco_web1.jpg', 1600, 804, l('Page d’accueil', 'Home page'), l('Page d’accueil de Partithéco', 'Partithéco home page')),
       shot('images/partitheco_web2.jpg', 1600, 804, l('Interface web', 'Web interface'), l('Interface web de Partithéco', 'Partithéco web interface')),
