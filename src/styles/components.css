@@ -415,7 +415,7 @@ kbd {
 @media (max-width: 900px) {
   .hero { min-height: 0; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; width: min(100%, 260px); justify-self: start; }
+  .hero-visual { order: -1; width: min(100%, 260px); justify-self: center; margin-inline: auto; }
   .float-chip--a { left: auto; right: -48%; top: 12%; }
   .float-chip--b { right: -30%; bottom: 8%; }
 }
