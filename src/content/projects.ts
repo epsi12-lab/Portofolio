@@ -69,8 +69,8 @@ export const projects: Project[] = [
         'The server (Kotlin/Ktor) is authoritative over game state; clients communicate over WebSockets for instant updates, with JWT authentication and persistent accounts and games (PostgreSQL, Redis sessions).',
       ),
       note: l(
-        'Projet d’équipe : le code n’est pas hébergé sur un dépôt public individuel.',
-        'Team project: the code isn’t hosted on an individual public repository.',
+        'Projet d’équipe : le dépôt n’est pas accessible publiquement.',
+        'Team project: the repository isn’t publicly accessible.',
       ),
     },
   },
